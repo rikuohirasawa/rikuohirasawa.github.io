@@ -7,13 +7,29 @@ import 'swiper/components/pagination'
 import SwiperCore, { Navigation, Pagination } from 'swiper'
 import MuseProject from './imgs/muse-image.JPG'
 
+import { Page } from './GlobalStyles'
+
 SwiperCore.use([Navigation, Pagination])
-export const Projects = () => {
+export const Projects = ({navRef}) => {
+
+    const styles = {
+        swiperSlide: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+    }
     return (
-    <Wrapper>
+    <Page>
+    <Wrapper
+    className="page projects"
+    ref={el=>navRef.current={...navRef.current, projects: el}}>
     <div className="section-title">Projects</div>
-        <Swiper navigation pagination slidesPerView={1} loop={true}>
-            <SwiperSlide>
+        <Swiper navigation slidesPerView={1} loop={true} 
+        style={{
+            height: '100%'
+        }}>
+            <SwiperSlide style={styles.swiperSlide}>
                 <SlideContent>
                     <div>
                         <div className="slide-title">Muse</div>
@@ -34,11 +50,14 @@ export const Projects = () => {
             </SwiperSlide>
         </Swiper>
     </Wrapper>
+    </Page>
     )
 }
 
 const Wrapper = styled.div`
-    padding: 35px;
+    padding: 0 35px;
+
+    height: 100%;
 
     .swiper-button-prev,
     .swiper-button-next {
@@ -54,6 +73,7 @@ const SlideContent = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    width: 100%;
     
     .slide-title {
         font-size: 1.5rem;

@@ -7,16 +7,21 @@ import { Skills } from "./Skills";
 import { Projects } from "./Projects";
 import { Contact } from "./Contact";
 
+import { useRef } from "react";
+
 const App = () => {
+  const navRef = useRef(null);
+
   return (
     <Wrapper>
     <GlobalStyle/>
-      <Header/>
-      <Introduction/>
-      <About/>
+      <Header navRef={navRef}/>
+      <Introduction navRef={navRef}/>
+      <About navRef={navRef}/>
+      <Projects navRef={navRef}/>
       <Skills/>
-      <Projects/>
-      <Contact/>
+  
+      <Contact navRef={navRef}/>
     </Wrapper>
   );
 }

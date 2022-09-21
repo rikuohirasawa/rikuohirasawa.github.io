@@ -1,39 +1,96 @@
 import styled from "styled-components"
+import NewfoundlandBG from './imgs/newfoundland-bg.jpg'
+import Portrait from './imgs/portrait.jpg'
 
-export const Introduction = () => {
+export const Introduction = ({navRef}) => {
+    const navPage = (type) => {
+        navRef.current[type].scrollIntoView({behavior: 'smooth'});
+    };
     return (
-        <BgContainer>
-         <Content>
+        <Wrapper
+        // style={{backgroundImage:`url(${NewfoundlandBG})` }}
+        >
+            {/* <img className='portrait-image' src={Portrait}/> */}
+            <Content>
+                <BorderContainer>
                 <div>Hi, I'm Rikuo</div>
-                <div>Web Developer</div>
+                <div>I create things for the Web</div>
                 <BtnContainer>
-                    <Btn>Projects</Btn>
-                    <Btn>Contact</Btn>
+                    <Btn onClick={()=>{navPage('projects')}}>Projects</Btn>
+                    <Btn onClick={()=>{navPage('contact')}}>Contact</Btn>
                 </BtnContainer>
+                </BorderContainer>
             </Content>
-        </BgContainer>
+        </Wrapper>
     )
 }
 
-const BgContainer = styled.div`
-    /* background-image: url('https://images.unsplash.com/photo-1658471466829-c480462ef47a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80');
-    width: 100%;
-    height: 900px;
-    background-size: cover;
-    background-repeat: no-repeat; */
-    /* filter: grayscale(100%); */
-    /* display: flex; */
+const Wrapper = styled.div`
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.35) ), url(${NewfoundlandBG});
+    filter: grayscale(100%);
+
+    background-position: center;
+    background-size: cover;
+    
+    @keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    };
+    
+    @keyframes slidein {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+    to {
+        -webkit-transform: translateX(0%);
+    }
+    };
+    
+    .portrait-image {
+        width: 450px;
+        height: 100%;
+        animation: 3s ease-in 0s 1 fadein;
+    }
 `
 
+
+
 const Content = styled.div`
+    animation: fadein 3s;
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 6px;
     align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 90vh;
 `
 
+const BorderContainer = styled.div`
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: 1px solid #fff;
+    /* border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 1); */
+    border-radius: 50%;
+    height: 450px;
+    width: 450px;
+    padding: 16px;`
 
 
 const BtnContainer = styled.div`
@@ -44,7 +101,8 @@ const BtnContainer = styled.div`
 const Btn = styled.button`
     font-family: inherit;
     background: inherit;
-    border: 1px solid black;
+    border: 1px solid #fff;
+    color: inherit;
     font-size: 1rem;
     padding: 6px 15px;
     cursor: pointer;
