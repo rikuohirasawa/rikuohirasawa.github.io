@@ -23,20 +23,18 @@ export const Header = ({navRef}) => {
 
 const Wrapper = styled.div`
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 80px;
-
-
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    width: 100%;
-    z-index: 99;
+    width: calc(100% - 35px);
+    margin: 0 auto;
     .flex-wrapper {
         display: flex;
         padding: 35px;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: 94%;
+        margin-left: auto;
     }
     `
 
@@ -44,6 +42,7 @@ const NavContainer = styled.div`
     display: flex;
     align-items: center;
     gap: 18px;
+    margin-left: auto;
 
     .nav-page {
         cursor: pointer;

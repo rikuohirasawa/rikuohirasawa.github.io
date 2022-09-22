@@ -9,7 +9,7 @@ export const Contact = ({navRef}) => {
         <Wrapper 
         className="page contact"
         ref={el=>navRef.current={...navRef.current, contact: el}}>
-            <div className="section-title">Contact</div>
+            <div className="section-title"><span className='margin-left'>Contact</span></div>
             <FlexWrapper>
             <EmailForm/>
                 <Container>

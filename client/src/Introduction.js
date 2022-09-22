@@ -26,13 +26,14 @@ export const Introduction = ({navRef}) => {
 }
 
 const Wrapper = styled.div`
-
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
     background-image: linear-gradient( rgba(0, 0, 0, 0.1), 
     rgba(0, 0, 0, 0.35) ), url(${NewfoundlandBG});
     filter: grayscale(100%);
+    max-width: 100%;
 
     background-position: center;
     background-size: cover;

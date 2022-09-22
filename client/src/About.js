@@ -7,10 +7,10 @@ export const About = ({navRef}) => {
     return (
         <Wrapper className="page about"
         ref={el=>navRef.current={...navRef.current, about: el}}>
-            <div className="section-title">About</div>
+            <div className="section-title"><span className="margin-left">About</span></div>
             <FlexRow>
             <Container>
-                <div>A full stack web developer from looking for new opportunities.</div>
+                <div>A full stack web developer from Newfoundland looking for new opportunities.</div>
                 <div>
                     I've been interested in programming for quite some time, and decided to take the leap
                     a few months ago by attending the Web Development program at Concordia
@@ -50,7 +50,14 @@ const Wrapper = styled.div`
     .portrait {
         width: 400px;
         height: 400px;
-        animation: 18s ease 0s infinite normal none running fadein;
+
+        border-radius: 50%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 0 18px;
+        /* border-left: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(0, 0, 0, 0.1); */
+        /* animation: 18s ease 0s infinite normal none running fadein; */
     }
 `
 
@@ -58,6 +65,8 @@ const FlexRow = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 36px;
+    
     `
 
 const Container = styled.div`

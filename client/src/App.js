@@ -6,6 +6,7 @@ import { Introduction } from "./Introduction";
 import { Skills } from "./Skills";
 import { Projects } from "./Projects";
 import { Contact } from "./Contact";
+import { Sidebar } from "./Sidebar";
 
 import { useRef } from "react";
 
@@ -14,14 +15,20 @@ const App = () => {
 
   return (
     <Wrapper>
-    <GlobalStyle/>
+      <GlobalStyle/>
+      <Column>
       <Header navRef={navRef}/>
-      <Introduction navRef={navRef}/>
-      <About navRef={navRef}/>
-      <Projects navRef={navRef}/>
-      <Skills/>
-  
-      <Contact navRef={navRef}/>
+      <Row>
+      <Content>
+        <Introduction navRef={navRef}/>
+        <About navRef={navRef}/>
+        <Projects navRef={navRef}/>
+        <Skills navRef={navRef}/>
+        <Contact navRef={navRef}/>
+      </Content>
+      <Sidebar navRef={navRef}/>
+      </Row>
+      </Column>
     </Wrapper>
   );
 }
@@ -29,5 +36,20 @@ const App = () => {
 export default App;
 
 const Wrapper = styled.div`
-
+display: flex;
+justify-content: center;
 `
+
+const Column = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;`
+
+const Row = styled.div`
+display: flex;
+max-width: 100%;
+`
+
+const Content = styled.div`
+max-width: calc(100% - 35px);
+margin-left: auto;`

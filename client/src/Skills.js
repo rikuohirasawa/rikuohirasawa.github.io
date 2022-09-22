@@ -22,7 +22,7 @@ import MuiLogo from './imgs/logos/mui-logo.png'
 
 
 SwiperCore.use([Navigation, Pagination])
-export const Skills = () => {
+export const Skills = ({navRef}) => {
     const [toggleDisplay, setToggleDisplay] = useState(false);
 
     const style = {
@@ -34,8 +34,9 @@ export const Skills = () => {
 
     return (
         <Page>
-        <Wrapper>
-            <div className="section-title">Skills & Tools</div>
+        <Wrapper
+        ref={el=>navRef.current={...navRef.current, skills: el}}>
+            <div className="section-title"><span className="margin-left">Skills & Tools</span></div>
             <Content>
             <Swiper navigation slidesPerView={1}>
                 <SwiperSlide>
@@ -114,6 +115,7 @@ export const Skills = () => {
 const Wrapper = styled.div`
     padding: 0 35px;
     height: 100%;
+
 
 
     .swiper-button-prev,

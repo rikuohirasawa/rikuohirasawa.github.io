@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
         color: rgba(0, 0, 0, 0.4)
     }
 
+    .margin-left {
+        margin-left: 18px;
+    }
+
     `
 
 export const Page = styled.section`

@@ -24,7 +24,7 @@ export const Projects = ({navRef}) => {
     <Wrapper
     className="page projects"
     ref={el=>navRef.current={...navRef.current, projects: el}}>
-    <div className="section-title">Projects</div>
+    <div className="section-title"><span className="margin-left">Projects</span></div>
         <Swiper navigation slidesPerView={1} loop={true} 
         style={{
             height: '100%'
@@ -56,7 +56,6 @@ export const Projects = ({navRef}) => {
 
 const Wrapper = styled.div`
     padding: 0 35px;
-
     height: 100%;
 
     .swiper-button-prev,
