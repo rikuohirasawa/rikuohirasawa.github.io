@@ -13,7 +13,7 @@ import SwiperCore, { Navigation, Pagination } from 'swiper'
 import { AiOutlineHtml5, } from 'react-icons/ai'
 import { SiJavascript } from 'react-icons/si'
 import { GrReactjs } from 'react-icons/gr'
-import { SiMongodb, SiCss3, SiSwiper, SiRedux } from 'react-icons/si'
+import { SiMongodb, SiCss3, SiSwiper, SiRedux, SiMaterialui } from 'react-icons/si'
 import { FaNodeJs } from 'react-icons/fa'
 import { FiGitBranch } from 'react-icons/fi'
 import { CgNpm } from 'react-icons/cg'
@@ -75,11 +75,7 @@ export const Skills = () => {
                 <SwiperSlide>
                     <SkillsGrid>
                         <SkillContainer onClick={()=>{window.open('https://mui.com/', '_blank')}}>
-                            <div className="flex-icon">Material UI <img src={MuiLogo} style={{
-                                width: '24px',
-                                height: '100%',
-                                filter: 'grayscale(100%)'
-                            }}/></div>
+                            <div className="flex-icon">Material UI <SiMaterialui style={style.logo}/></div>
                             <div className="accent-text">UI library</div>
                         </SkillContainer>
                         <SkillContainer onClick={()=>{window.open('https://swiperjs.com/', '_blank')}}>

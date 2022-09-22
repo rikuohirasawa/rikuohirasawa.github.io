@@ -1,6 +1,5 @@
 
 import styled from "styled-components"
-import PlantDrawing from './imgs/plant-drawing.JPG'
 import Portrait from './imgs/portrait.jpg'
 import { AiOutlineDownload, AiOutlineGithub } from 'react-icons/ai'
 import Resume from './downloads/rikuoh-resume.pdf'
@@ -29,7 +28,7 @@ export const About = ({navRef}) => {
                     <Btn href='https://github.com/rikuohirasawa' target='_blank'><AiOutlineGithub /> Github</Btn>
                 </BtnContainer>
             </Container>
-            <img className="plant-drawing" src={Portrait}/>
+            <img className="portrait" src={Portrait}/>
             </FlexRow>
 
         </Wrapper>
@@ -39,9 +38,19 @@ export const About = ({navRef}) => {
 const Wrapper = styled.div`
     padding: 35px;
 
-    .plant-drawing {
+    @keyframes slidein {
+    from {
+        -webkit-transform: translateX(100%);
+    }
+    to {
+        -webkit-transform: translateX(0%);
+    }
+    };
+
+    .portrait {
         width: 400px;
         height: 400px;
+        animation: 18s ease 0s infinite normal none running fadein;
     }
 `
 
