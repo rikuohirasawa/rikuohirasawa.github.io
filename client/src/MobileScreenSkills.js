@@ -184,7 +184,7 @@ const Content = styled.div`
 const SkillsGrid = styled.div`
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     width: 80%;
     margin: auto;
@@ -214,7 +214,14 @@ const SkillContainer = styled.div`
     }
 
     .accent-text {
-        color: rgba(0, 0, 0, 0.4)
+        color: rgba(0, 0, 0, 0.4);
+        word-wrap: break-word;
+        max-width: 100%;
+        text-align: center;
+
+        @media screen and (min-width: 800px) {
+        text-align: left;
+        }
     }
 
     .margin-top {

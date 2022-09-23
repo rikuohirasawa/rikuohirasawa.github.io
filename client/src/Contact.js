@@ -32,12 +32,20 @@ const Wrapper = styled.div`
     `
 
 const FlexWrapper = styled.div`
-    padding: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70%;
-    gap: 80px;
+    flex-direction: column;
+    margin-top: 20%;
+    gap: 60px;
+
+    @media screen and (min-width: 800px) {
+        flex-direction: row;
+        padding: 35px;
+        height: 70%;
+        gap: 80px;
+        margin-top: 0;
+    }
 `
 
 const Container = styled.div`

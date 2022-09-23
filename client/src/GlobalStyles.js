@@ -1,11 +1,14 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-    body {
+    body,
+    html {
         margin: 0;
         padding: 0;
         font-family: 'Courier Prime', monospace;
         box-sizing: border-box;
+        overflow-x: hidden;
+        width: 100%;
 
     }
     

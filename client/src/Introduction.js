@@ -34,8 +34,6 @@ const Wrapper = styled.div`
     rgba(0, 0, 0, 0.35) ), url(${NewfoundlandBG});
     filter: grayscale(100%);
     max-width: 100%;
-    border: 1px solid red;
-
     background-position: center;
     background-size: cover;
     
