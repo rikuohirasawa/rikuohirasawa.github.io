@@ -65,16 +65,22 @@ export const Sidebar = ({navRef}) => {
 }
 
 const Wrapper = styled.div`
+    display: none;
     position: fixed;
     top: 0;
     background: #fff;
-    display: flex;
-    justify-content: space-evenly;
 
+    justify-content: space-evenly;
     align-items: center;
     outline: 1px solid rgba(0, 0, 0, 0.1);
     height: 100vh;
     transition: all 0.3s ease-in-out;
+    width: 0;
+
+    @media screen and (min-width: 800px) {
+        display: flex;
+    }
+
 
 `
 

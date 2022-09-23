@@ -48,25 +48,32 @@ const Wrapper = styled.div`
     };
 
     .portrait {
-        width: 400px;
-        height: 400px;
 
+        width: 250px;
+        height: 250px;
         border-radius: 50%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         border-right: 1px solid rgba(0, 0, 0, 0.1);
         margin: 0 18px;
-        /* border-left: 1px solid rgba(0, 0, 0, 0.1);
-        border-top: 1px solid rgba(0, 0, 0, 0.1); */
-        /* animation: 18s ease 0s infinite normal none running fadein; */
+        @media screen and (min-width: 1000px) {
+        width: 400px;
+        height: 400px;
+
+        }
     }
 `
 
 const FlexRow = styled.div`
+    
+    margin-top: 36px;
+    text-align: center;
+    @media screen and (min-width: 800px) {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 36px;
-    
+    }
+
+
     `
 
 const Container = styled.div`
@@ -75,7 +82,11 @@ const Container = styled.div`
     justify-content: center;
     text-align: center;
     gap: 8px;
-    width: 50%;
+    @media screen and (min-width: 800px) {
+        width: 50%;
+
+    }
+
 
     
 `

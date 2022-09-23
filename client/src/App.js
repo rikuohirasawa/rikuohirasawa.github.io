@@ -51,5 +51,11 @@ max-width: 100%;
 `
 
 const Content = styled.div`
-max-width: calc(100% - 35px);
-margin-left: auto;`
+max-width: 100%;
+
+margin-left: auto;
+
+@media screen and (min-width: 800px) {
+  max-width: calc(100% - 35px);
+  
+}`

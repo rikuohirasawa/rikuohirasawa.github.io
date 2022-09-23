@@ -17,13 +17,19 @@ import { SiMongodb, SiCss3, SiSwiper, SiRedux, SiMaterialui } from 'react-icons/
 import { FaNodeJs } from 'react-icons/fa'
 import { FiGitBranch } from 'react-icons/fi'
 import { CgNpm } from 'react-icons/cg'
-import MuiLogo from './imgs/logos/mui-logo.png'
+
+import { MobileScreenSkills } from './MobileScreenSkills'
 
 
 
 SwiperCore.use([Navigation, Pagination])
 export const Skills = ({navRef}) => {
     const [toggleDisplay, setToggleDisplay] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    window.addEventListener('resize', event => {
+        setWindowWidth(event.currentTarget.innerWidth)
+    })
 
     const style = {
         logo: {
@@ -31,12 +37,15 @@ export const Skills = ({navRef}) => {
             height: '100%'
         }
     }
-
     return (
         <Page>
         <Wrapper
         ref={el=>navRef.current={...navRef.current, skills: el}}>
             <div className="section-title"><span className="margin-left">Skills & Tools</span></div>
+            {windowWidth < 1670 ? 
+                
+                <MobileScreenSkills/>
+                : 
             <Content>
             <Swiper navigation slidesPerView={1}>
                 <SwiperSlide>
@@ -102,7 +111,9 @@ export const Skills = ({navRef}) => {
                     </SkillsGrid>
                 </SwiperSlide>
             </Swiper>
+            
             </Content>
+}
 
             {/* <SeeMoreBtn onClick={()=>{setToggleDisplay(!toggleDisplay)}}>{!toggleDisplay ? 'See More...' : 'Hide'}</SeeMoreBtn>
             {toggleDisplay && 
@@ -148,17 +159,19 @@ const SkillContainer = styled.div`
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     padding: 16px;
-    width: 375px;
     height: 200px;
+
+    @media screen and (min-width: 1670px) {  
+        width: 375px;
+        height: 200px;
+    }
+
 
     &:hover,
     &:focus {
         box-shadow: 0 8px 6px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.3);  */
-    /* border-right: 1px solid rgba(0, 0, 0, 0.3);
-    border-left: 1px solid rgba(0, 0, 0, 0.3); */
 
     .flex-icon {
         display: flex;
@@ -180,7 +193,7 @@ const SkillsGrid = styled.div`
     grid-template-columns: repeat(3, 500px);
     gap: 16px;
     width: 80%;
-    margin: 0 auto;
+    margin: auto;
     padding: 4px;`
 
 const ToolsGrid = styled.div`

@@ -14,6 +14,11 @@ export const GlobalStyle = createGlobalStyle`
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding: 12px 0;
         margin: 18px 0;
+        text-align: center;
+
+        @media screen and (min-width: 800px) {
+            text-align: left;
+        }
     }
     
     .accent-text {
@@ -23,7 +28,6 @@ export const GlobalStyle = createGlobalStyle`
     .margin-left {
         margin-left: 18px;
     }
-
     `
 
 export const Page = styled.section`

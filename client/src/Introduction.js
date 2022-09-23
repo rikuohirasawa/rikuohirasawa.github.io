@@ -34,6 +34,7 @@ const Wrapper = styled.div`
     rgba(0, 0, 0, 0.35) ), url(${NewfoundlandBG});
     filter: grayscale(100%);
     max-width: 100%;
+    border: 1px solid red;
 
     background-position: center;
     background-size: cover;
@@ -84,14 +85,14 @@ const BorderContainer = styled.div`
     justify-content: center;
     gap: 6px;
     border: 1px solid #fff;
-    /* border-top: 1px solid rgba(255, 255, 255, 0.4);
-    border-left: 1px solid rgba(255, 255, 255, 0.4);
-    border-right: 1px solid rgba(255, 255, 255, 1);
-    border-bottom: 1px solid rgba(255, 255, 255, 1); */
     border-radius: 50%;
     height: 450px;
     width: 450px;
-    padding: 16px;`
+
+    @media only screen and (min-width: 600px) {
+        padding: 16px;
+    }
+`
 
 
 const BtnContainer = styled.div`

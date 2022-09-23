@@ -69,9 +69,16 @@ const Wrapper = styled.div`
 
 
 const SlideContent = styled.div`
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-direction: column;
+
+    @media screen and (min-width: 1450px) {
+        flex-direction: row;
+        text-align: left;
+    }
     width: 100%;
     
     .slide-title {
@@ -80,7 +87,11 @@ const SlideContent = styled.div`
     }
 
     .muse-image {
-        height: 400px;
+        height: 280px;
+        @media screen and (min-width: 800px) {
+            height: 400px;
+        }
+
     }`
 
 const ExternalLinkContainer = styled.div`
