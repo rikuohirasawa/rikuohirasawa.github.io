@@ -1,18 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.0c4607a0.css",
-    "main.js": "/static/js/main.932a18c7.js",
+    "main.js": "/static/js/main.6842ecef.js",
     "static/media/newfoundland-bg.jpg": "/static/media/newfoundland-bg.6514934e6e20b89a66aa.jpg",
     "static/media/muse-image.JPG": "/static/media/muse-image.c9a32015d85b9de3880a.JPG",
     "static/media/rikuoh-resume.pdf": "/static/media/rikuoh-resume.0d6fa8040b135a5b40a8.pdf",
     "static/media/portrait.jpg": "/static/media/portrait.79522f956883cca6af08.jpg",
-    "static/media/mui-logo.png": "/static/media/mui-logo.5605bc08fd5a8831bcf9.png",
     "index.html": "/index.html",
     "main.0c4607a0.css.map": "/static/css/main.0c4607a0.css.map",
-    "main.932a18c7.js.map": "/static/js/main.932a18c7.js.map"
+    "main.6842ecef.js.map": "/static/js/main.6842ecef.js.map"
   },
   "entrypoints": [
     "static/css/main.0c4607a0.css",
-    "static/js/main.932a18c7.js"
+    "static/js/main.6842ecef.js"
   ]
 }
