@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/static/css/main.0c4607a0.css",
-    "main.js": "/static/js/main.6842ecef.js",
+    "main.js": "/static/js/main.5bb08816.js",
     "static/media/newfoundland-bg.jpg": "/static/media/newfoundland-bg.6514934e6e20b89a66aa.jpg",
+    "static/media/portfolio-website.JPG": "/static/media/portfolio-website.26f83ee0cc8b9db4719c.JPG",
     "static/media/muse-image.JPG": "/static/media/muse-image.c9a32015d85b9de3880a.JPG",
-    "static/media/rikuoh-resume.pdf": "/static/media/rikuoh-resume.0d6fa8040b135a5b40a8.pdf",
+    "static/media/rikuo-hirasawa-resume.docx.pdf": "/static/media/rikuo-hirasawa-resume.docx.1e768add6bbd8e757674.pdf",
     "static/media/portrait.jpg": "/static/media/portrait.79522f956883cca6af08.jpg",
     "index.html": "/index.html",
     "main.0c4607a0.css.map": "/static/css/main.0c4607a0.css.map",
-    "main.6842ecef.js.map": "/static/js/main.6842ecef.js.map"
+    "main.5bb08816.js.map": "/static/js/main.5bb08816.js.map"
   },
   "entrypoints": [
     "static/css/main.0c4607a0.css",
-    "static/js/main.6842ecef.js"
+    "static/js/main.5bb08816.js"
   ]
 }
