@@ -8,9 +8,7 @@ export const Introduction = ({navRef}) => {
     };
     return (
         <Wrapper
-        // style={{backgroundImage:`url(${NewfoundlandBG})` }}
         >
-            {/* <img className='portrait-image' src={Portrait}/> */}
             <Content>
                 <BorderContainer>
                 <div>Hi, I'm Rikuo</div>

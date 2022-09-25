@@ -5,6 +5,7 @@ import { useState } from "react";
 
 
 export const EmailForm = () => {
+    // emailjs variables
     const REACT_APP_SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
     const REACT_APP_TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
     const REACT_APP_PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
@@ -12,6 +13,8 @@ export const EmailForm = () => {
     const [emailSuccess, setEmailSuccess] = useState(false);
     const [emailError, setEmailError] = useState(false);
 
+
+    // send form to emailJS on submit (form content specified in e.target)
     const handleSubmit = (e) => {
         e.preventDefault();
         emailjs.sendForm(REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, e.target, REACT_APP_PUBLIC_KEY)

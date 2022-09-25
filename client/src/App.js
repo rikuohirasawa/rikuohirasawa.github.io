@@ -11,6 +11,11 @@ import { Sidebar } from "./Sidebar";
 import { useRef } from "react";
 
 const App = () => {
+  // useRef hook used to navigate throughout the page
+  // each component is passed the hook, from which a type is set - which determines
+  // which component to navigate to
+  // https://stackoverflow.com/questions/64967082/scroll-into-view-in-react
+  // https://robinvdvleuten.nl/blog/scroll-a-react-component-into-view/
   const navRef = useRef(null);
 
   return (

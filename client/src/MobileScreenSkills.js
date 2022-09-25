@@ -16,10 +16,15 @@ import { FaNodeJs } from 'react-icons/fa'
 import { FiGitBranch } from 'react-icons/fi'
 import { CgNpm } from 'react-icons/cg'
 
+// skills component for small screens - I was wrestling with media queries for a while - but the combination of grid and swiper
+// proved difficult for me to manipulate properly, and so eventually it was easier to just make a new component, as
+// the amount of cards in a grid is changing based on screen size
+
 
 SwiperCore.use([Navigation, Pagination])
 export const MobileScreenSkills = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    // change windowWidth state when window is resized - saved in state to ensure that the component rerenders
     window.addEventListener('resize', event => {
         setWindowWidth(event.currentTarget.innerWidth)
     })
@@ -99,6 +104,7 @@ export const MobileScreenSkills = () => {
             <SkillContainer onClick={()=>{window.open('https://redux.js.org/', '_blank')}}>
                 <div className="flex-icon">Redux <SiRedux style={style.logo}/></div>
                 <div className="accent-text">State management</div>
+                <div className="accent-text">(Currently learning)</div>
             </SkillContainer>
             </SwiperSlide>
         </Swiper>

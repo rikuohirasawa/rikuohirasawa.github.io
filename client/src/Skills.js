@@ -24,9 +24,9 @@ import { MobileScreenSkills } from './MobileScreenSkills'
 
 SwiperCore.use([Navigation, Pagination])
 export const Skills = ({navRef}) => {
-    const [toggleDisplay, setToggleDisplay] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+    // change windowWidth state when window is resized - saved in state to ensure that the component rerenders
     window.addEventListener('resize', event => {
         setWindowWidth(event.currentTarget.innerWidth)
     })
@@ -107,6 +107,7 @@ export const Skills = ({navRef}) => {
                         <SkillContainer onClick={()=>{window.open('https://redux.js.org/', '_blank')}}>
                             <div className="flex-icon">Redux <SiRedux style={style.logo}/></div>
                             <div className="accent-text">State management</div>
+                            <div className="accent-text">(Currently learning)</div>
                         </SkillContainer>
                     </SkillsGrid>
                 </SwiperSlide>

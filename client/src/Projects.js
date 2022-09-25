@@ -6,6 +6,7 @@ import 'swiper/components/navigation'
 import 'swiper/components/pagination'
 import SwiperCore, { Navigation, Pagination } from 'swiper'
 import MuseProject from './imgs/muse-image.JPG'
+import PortfolioImage from './imgs/portfolio-website.JPG'
 
 import { Page } from './GlobalStyles'
 
@@ -43,7 +44,18 @@ export const Projects = ({navRef}) => {
                 </SlideContent>
             </SwiperSlide>
             <SwiperSlide>
-                <div>Project 2</div>
+                <SlideContent>
+                    <div>
+                        <div className="slide-title">Personal Portfolio</div>
+                        <div>My personal portfolio... what you're viewing right now!</div>
+                        <div>Created using React.js, and hosted via Github pages</div>
+                        <ExternalLinkContainer>
+                            <ExternalLink href='https://github.com/rikuohirasawa/rikuohirasawa.github.io' target='_blank'>View on Github</ExternalLink>
+                        </ExternalLinkContainer>
+                    </div>
+                    <img className='portfolio-image' src={PortfolioImage}/>
+                </SlideContent>
+
             </SwiperSlide>
             <SwiperSlide>
                 <div>Project 3</div>
@@ -60,10 +72,19 @@ const Wrapper = styled.div`
 
     .swiper-button-prev,
     .swiper-button-next {
-    color: inherit;
+        color: inherit;
 }
     .swiper-pagination-bullet-active {
         background-color: black;
+    }
+
+    .swiper-container {
+        margin: 0 auto;
+    }
+    .swiper-slide {
+        height: 80%;
+        margin: auto 0;
+        display: flex;
     }
 `
 
@@ -72,24 +93,39 @@ const SlideContent = styled.div`
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
     flex-direction: column;
+    justify-content: space-evenly;
+    height: 80%;
+    margin: auto 0;
+    margin-top: -12px;
+
 
     @media screen and (min-width: 1450px) {
         flex-direction: row;
         text-align: left;
+        height: 100%;
     }
     width: 100%;
     
     .slide-title {
         font-size: 1.5rem;
-        margin: 12px 0;
+        margin-bottom: 12px;
     }
 
     .muse-image {
         height: 280px;
         @media screen and (min-width: 800px) {
             height: 400px;
+        }
+    }
+    
+    .portfolio-image {
+        height: 280px;
+        max-width: 90%;
+        object-fit: cover;
+        @media screen and (min-width: 800px) {
+            height: 500px;
+            width: auto;
         }
 
     }`

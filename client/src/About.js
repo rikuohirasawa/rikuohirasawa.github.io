@@ -2,7 +2,7 @@
 import styled from "styled-components"
 import Portrait from './imgs/portrait.jpg'
 import { AiOutlineDownload, AiOutlineGithub } from 'react-icons/ai'
-import Resume from './downloads/rikuoh-resume.pdf'
+import Resume from './downloads/rikuo-hirasawa-resume.docx.pdf'
 export const About = ({navRef}) => {
     return (
         <Wrapper className="page about"
