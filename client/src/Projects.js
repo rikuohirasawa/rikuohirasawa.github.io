@@ -55,10 +55,11 @@ export const Projects = ({navRef}) => {
                     </div>
                     <img className='portfolio-image' src={PortfolioImage}/>
                 </SlideContent>
-
             </SwiperSlide>
             <SwiperSlide>
-                <div>Project 3</div>
+                <SlideContent>
+                    <div>...more coming soon!</div>
+                </SlideContent>
             </SwiperSlide>
         </Swiper>
     </Wrapper>
