@@ -7,6 +7,7 @@ import 'swiper/components/pagination'
 import SwiperCore, { Navigation, Pagination } from 'swiper'
 import MuseProject from './imgs/muse-image.JPG'
 import PortfolioImage from './imgs/portfolio-website.JPG'
+import CritterImage from './imgs/critter.JPG'
 
 import { Page } from './GlobalStyles'
 
@@ -41,6 +42,20 @@ export const Projects = ({navRef}) => {
                         </ExternalLinkContainer>
                     </div>
                     <img className='muse-image' src={MuseProject}/>
+                </SlideContent>
+            </SwiperSlide>
+            <SwiperSlide>
+            <SlideContent>
+                    <div>
+                        <div className="slide-title">Critter</div>
+                        <div>Twitter clone... cat themed</div>
+                        <div>Final project for React.js module of Full-Stack Web Development Program at Concordia University</div>
+                        <div>Created using React.js and Express.js</div>
+                        <ExternalLinkContainer>
+                            <ExternalLink href='https://github.com/rikuohirasawa/Critter' target='_blank'>View on Github</ExternalLink>
+                        </ExternalLinkContainer>
+                    </div>
+                    <img className='portfolio-image' src={CritterImage}/>
                 </SlideContent>
             </SwiperSlide>
             <SwiperSlide>
