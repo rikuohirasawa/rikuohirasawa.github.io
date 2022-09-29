@@ -10,17 +10,13 @@ export const About = ({navRef}) => {
             <div className="section-title"><span className="margin-left">About</span></div>
             <FlexRow>
             <Container>
-                <div>A full stack web developer from Newfoundland looking for new opportunities.</div>
+                <div>I am a web developer based in Newfoundland, Canada.</div>
                 <div>
-                    I've been interested in programming for quite some time, and decided to take the leap
-                    a few months ago by attending the Web Development program at Concordia
-                    University.
+                    My work specializes in creating seamless applications, both client-facing and behind the scenes.
                 </div>
-                <div>During this time I learned a variety of skills, many related to frontend/backend development
-                    - but most important - the thought process behind being a good developer.
+                <div>
+                    Currently I am seeking new opportunities to work on exciting new projects, and continue my learning as a developer.
                 </div>
-                <div>I'm very excited to continue learning, and am now looking for the opportunity to do so in a professional environment.</div>
-                <div>... but that doesn't mean I've stopped on my own projects ;) - you're welcome to take a look below to see what I've been working on.</div>
                 <div>Thank you for checking out my portfolio!</div>
                 <div>- Rikuo</div>
                 <BtnContainer>
@@ -80,21 +76,16 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     gap: 8px;
     @media screen and (min-width: 800px) {
         width: 50%;
-
     }
-
-
-    
 `
 
 const BtnContainer = styled.div`
     display: flex;
     gap: 6px;
-    justify-content: center;
     margin: 18px 0;`
 
 const Btn = styled.a`

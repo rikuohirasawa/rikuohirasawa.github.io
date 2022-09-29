@@ -11,8 +11,8 @@ export const Introduction = ({navRef}) => {
         >
             <Content>
                 <BorderContainer>
-                <div>Hi, I'm Rikuo</div>
-                <div>I create things for the Web</div>
+                <div>Hi, I'm Rikuo,</div>
+                <div>Web Developer</div>
                 <BtnContainer>
                     <Btn onClick={()=>{navPage('projects')}}>Projects</Btn>
                     <Btn onClick={()=>{navPage('contact')}}>Contact</Btn>
