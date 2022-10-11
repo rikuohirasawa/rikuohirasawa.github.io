@@ -8,6 +8,7 @@ import SwiperCore, { Navigation, Pagination } from 'swiper'
 import MuseProject from './imgs/muse-image.JPG'
 import PortfolioImage from './imgs/portfolio-website.JPG'
 import CritterImage from './imgs/critter.JPG'
+import LabImage from './imgs/mh-lab.JPG'
 
 import { Page } from './GlobalStyles'
 
@@ -36,7 +37,7 @@ export const Projects = ({navRef}) => {
                     <div>
                         <div className="slide-title">Muse</div>
                         <div>A virtual museum tour using the Chicago Art Institute API</div>
-                        <div>Frontend created using React.js, and backend using Node.js & MongoDB</div>
+                        <div>Frontend created using React.js, and backend using Node.js, Express.js & MongoDB</div>
                         <ExternalLinkContainer>
                             <ExternalLink href='https://github.com/rikuohirasawa/muse' target='_blank'>View on Github</ExternalLink>
                         </ExternalLinkContainer>
@@ -69,6 +70,20 @@ export const Projects = ({navRef}) => {
                         </ExternalLinkContainer>
                     </div>
                     <img className='portfolio-image' src={PortfolioImage}/>
+                </SlideContent>
+            </SwiperSlide>
+            <SwiperSlide>
+                <SlideContent>
+                    <div>
+                        <div className="slide-title">Michiru Hirasawa Laboratory</div>
+                        <div>Neuroscience research laboratory at Memorial University of Newfoundland</div>
+                        <div>Currently a work in progress, first implementation of my work in Typescript</div>
+                        <div>Created using React.js, Typescript, Node.js, Express.js and MongoDB </div>
+                        <ExternalLinkContainer>
+                            <ExternalLink href='https://github.com/rikuohirasawa/michiru-lab' target='_blank'>View on Github</ExternalLink>
+                        </ExternalLinkContainer>
+                    </div>
+                    <img className='portfolio-image' src={LabImage}/>
                 </SlideContent>
             </SwiperSlide>
             <SwiperSlide>
@@ -114,6 +129,7 @@ const SlideContent = styled.div`
     height: 80%;
     margin: auto 0;
     margin-top: -12px;
+    line-height: 1.6;
 
 
     @media screen and (min-width: 1450px) {
