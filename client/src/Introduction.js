@@ -8,15 +8,18 @@ export const Introduction = ({navRef}) => {
     };
     return (
         <Wrapper
+        ref={el=>navRef.current={...navRef.current, introduction: el}}
         >
             <Content>
                 <BorderContainer>
-                <div>Hi, I'm Rikuo,</div>
-                <div>Web Developer</div>
-                <BtnContainer>
-                    <Btn onClick={()=>{navPage('projects')}}>Projects</Btn>
-                    <Btn onClick={()=>{navPage('contact')}}>Contact</Btn>
-                </BtnContainer>
+                    <div className="text-bold largest-header-text">Rikuo Hirasawa</div>
+                <div className="translate-Y">
+                    <div className="subheader-text">web developer</div>
+                    <BtnContainer>
+                        <Btn onClick={()=>{navPage('projects')}}>Projects</Btn>
+                        <Btn onClick={()=>{navPage('contact')}}>Contact</Btn>
+                    </BtnContainer>
+                </div>
                 </BorderContainer>
             </Content>
         </Wrapper>
@@ -25,15 +28,23 @@ export const Introduction = ({navRef}) => {
 
 const Wrapper = styled.div`
     display: flex;
-    justify-content: center;
+
+
     align-items: center;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.1), 
-    rgba(0, 0, 0, 0.35) ), url(${NewfoundlandBG});
+    /* background-image: linear-gradient( rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.35) ), url(${NewfoundlandBG}); */
     filter: grayscale(100%);
     max-width: 100%;
     background-position: center;
     background-size: cover;
     
+    padding: 0 20px;
+    @media screen and (min-width: 600px) {  
+        padding: 0 50px;
+    }
+    @media screen and (min-width: 1000px) {  
+        padding: 0 350px;
+    }
     @keyframes fadein {
     from {
         opacity: 0;
@@ -57,6 +68,35 @@ const Wrapper = styled.div`
         height: 100%;
         animation: 3s ease-in 0s 1 fadein;
     }
+
+    /* .animation-container {
+        position: relative;
+    }
+
+    .animation-container div {
+        position: absolute;
+        transform: translate(6%, -70%);
+    }
+
+    .animation-container div:nth-child(1) {
+        color: transparent;
+        
+    }
+    .animation-container div:nth-child(2) {
+        animation: animate 4s ease-in-out infinite
+    }
+    .translate-Y {
+        z-index: 99;
+        transform: translate(8%, 70%);
+    } */
+    .translate-Y {
+        z-index: 99;
+        transform: translate(4%, 0%);
+    @media only screen and (min-width: 600px) {
+        transform: translate(8%, 0%);
+    }
+
+    } 
 `
 
 
@@ -73,19 +113,24 @@ const Content = styled.div`
 `
 
 const BorderContainer = styled.div`
-    color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     gap: 6px;
-    border: 1px solid #fff;
+    border: 1px solid var(--dark-color);
     border-radius: 50%;
-    height: 450px;
-    width: 450px;
+    height: 380px;
+    width: 380px;
 
     @media only screen and (min-width: 600px) {
         padding: 16px;
+        height: 450px;
+        width: 450px;
+    }
+
+    .subheader-text {
+        font-size: 42px;
+        margin: 0 auto;
     }
 `
 
@@ -93,12 +138,13 @@ const BorderContainer = styled.div`
 const BtnContainer = styled.div`
     display: flex;
     gap: 6px;
+    margin: 16px auto;
 `
 
 const Btn = styled.button`
     font-family: inherit;
     background: inherit;
-    border: 1px solid #fff;
+    border: 1px solid var(--dark-color);
     color: inherit;
     font-size: 1rem;
     padding: 6px 15px;

@@ -31,23 +31,36 @@ export const Skills = ({navRef}) => {
         setWindowWidth(event.currentTarget.innerWidth)
     })
 
+    console.log(typeof windowWidth)
+
     const style = {
         logo: {
             width: '24px',
             height: '100%'
-        }
+        },
+        swiperSlide: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            maxHeight: '100%',
+            border: '1px solid red'
+        },
     }
     return (
-        <Page>
+
+
         <Wrapper
         ref={el=>navRef.current={...navRef.current, skills: el}}>
-            <div className="section-title"><span className="margin-left">Skills & Tools</span></div>
             {windowWidth < 1670 ? 
-                
-                <MobileScreenSkills/>
-                : 
+                <MobileScreenSkills/> 
+                :  
             <Content>
             <Swiper navigation slidesPerView={1}>
+
+                <SwiperSlide>
+                    <div className='flex-center section-title'>Skills & Tools</div>
+                </SwiperSlide>
                 <SwiperSlide>
                     <SkillsGrid>
                         <SkillContainer onClick={()=>{window.open('https://www.javascript.com/', '_blank')}}>
@@ -114,20 +127,28 @@ export const Skills = ({navRef}) => {
             </Swiper>
             
             </Content>
-}
+            }
+
 
             {/* <SeeMoreBtn onClick={()=>{setToggleDisplay(!toggleDisplay)}}>{!toggleDisplay ? 'See More...' : 'Hide'}</SeeMoreBtn>
             {toggleDisplay && 
             } */}
         </Wrapper>
-        </Page>
+
     )
 }
 
 const Wrapper = styled.div`
     padding: 0 35px;
-    height: 100%;
 
+
+
+    .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
 
 
     .swiper-button-prev,
@@ -143,12 +164,20 @@ const Wrapper = styled.div`
         opacity: 0;
         transition: 0.5s ease-in-out;
     }
+
+    .swiper-container {
+
+    }
+
+    .swiper-slide {
+        height: 80%;
+        margin: auto 0;
+    }
 `
 
 const Content = styled.div`
-    display: flex;
-    height: 85%;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     `
 
 const SkillContainer = styled.div`
@@ -191,30 +220,11 @@ const SkillContainer = styled.div`
 const SkillsGrid = styled.div`
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, 500px);
-    gap: 16px;
-    width: 80%;
-    margin: auto;
-    padding: 4px;`
-
-const ToolsGrid = styled.div`
-    display: grid;
+    align-items: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    transition: all 1s ease-in-out;
-    position: relative;
-    `
+    height: 100%;
 
-const SeeMoreBtn = styled.button`
-    font-family: inherit;
-    background: inherit;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    color: inherit;
-
-    
-    &:hover,
-    &:focus {
-        text-decoration: underline;
-    }`
+    width: 80%;
+    margin: 0 auto;
+    padding: 4px;`

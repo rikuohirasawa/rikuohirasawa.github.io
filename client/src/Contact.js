@@ -9,17 +9,19 @@ export const Contact = ({navRef}) => {
         <Wrapper 
         className="page contact"
         ref={el=>navRef.current={...navRef.current, contact: el}}>
-            <div className="section-title"><span className='margin-left'>Contact</span></div>
             <FlexWrapper>
-            <EmailForm/>
-                <Container>
-                    <div className="align-items"><AiOutlineMail/>rikuoh84@gmail.com</div>
-                    <div className="align-items"><AiOutlinePhone/>(709)-730-5377</div>
-                    <NavContainer>
-                    <a className='external-link' href='https://github.com/rikuohirasawa' target='_blank'><AiOutlineGithub/></a>
-                    <a className='external-link' href='https://www.linkedin.com/in/rikuo-hirasawa-5085b9229/' target='_blank'><AiOutlineLinkedin/></a>
-                    </NavContainer>
-                </Container>
+                <div className="section-title" style={{color: '#fff'}}>Get in touch.</div>
+                <FlexColumn>
+                    <EmailForm/>
+                    <Container>
+                        <div className="align-items"><AiOutlineMail/>rikuoh84@gmail.com</div>
+                        <div className="align-items"><AiOutlinePhone/>(709)-730-5377</div>
+                        <NavContainer>
+                        <a className='external-link' href='https://github.com/rikuohirasawa' target='_blank'><AiOutlineGithub/></a>
+                        <a className='external-link' href='https://www.linkedin.com/in/rikuo-hirasawa-5085b9229/' target='_blank'><AiOutlineLinkedin/></a>
+                        </NavContainer>
+                    </Container>
+                </FlexColumn>
             </FlexWrapper>
         </Wrapper>
         </Page>
@@ -27,11 +29,26 @@ export const Contact = ({navRef}) => {
 }
 const Wrapper = styled.div`
     padding: 0 35px;
-    height: 70%;
-
+    background: var(--dark-bg-color);
+    color: var(--soft-white-color);
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     `
 
 const FlexWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+
+    @media only screen and (min-width: 600px) {
+        flex-direction: row;
+    }
+`
+const FlexColumn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;

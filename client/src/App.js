@@ -9,8 +9,8 @@ import { Contact } from "./Contact";
 import { Sidebar } from "./Sidebar";
 
 import { useRef } from "react";
-
-
+import { useContext } from "react";
+import { PageContext } from "./PageContext";
 const App = () => {
   // useRef hook used to navigate throughout the page
   // each component is passed the hook, from which a type is set - which determines
@@ -18,21 +18,27 @@ const App = () => {
   // https://stackoverflow.com/questions/64967082/scroll-into-view-in-react
   // https://robinvdvleuten.nl/blog/scroll-a-react-component-into-view/
   const navRef = useRef(null);
-  
+
+  // import menuOpen to add blur effect to content when sidebar menu opens
+  const {menuOpen} = useContext(PageContext);
+  const parent = document.getElementById('sticky-container')
+  // while (parent) {
+  //   console.log(getComputedStyle(parent).overflow)
+  // }
+
   return (
-    <Wrapper>
+    <Wrapper id='sticky-container'>
       <GlobalStyle/>
-      <Column>
       <Header navRef={navRef}/>
+      <Column>
       <Row>
-      <Content>
+      <Content menuOpen={menuOpen}>
         <Introduction navRef={navRef}/>
         <About navRef={navRef}/>
         <Projects navRef={navRef}/>
         <Skills navRef={navRef}/>
         <Contact navRef={navRef}/>
       </Content>
-      <Sidebar navRef={navRef}/>
       </Row>
       </Column>
     </Wrapper>
@@ -42,26 +48,36 @@ const App = () => {
 export default App;
 
 const Wrapper = styled.div`
-display: flex;
-justify-content: center;
+  display: initial;
+  max-width: 100vw;
 `
 
 const Column = styled.div`
 display: flex;
 flex-direction: column;
-width: 100%;`
+align-items: center;
+width: 100%;
+height: 100%;
+`
 
 const Row = styled.div`
 display: flex;
-max-width: 100%;
+
 `
 
 const Content = styled.div`
-max-width: 100%;
 
-margin-left: auto;
+filter: ${props=>props.menuOpen && 'blur(1.5px)'};
+transition: all .3s ease-in-out;
+width: 100vw;
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 400px) {
+
+  
+}
+
+`
+/* @media screen and (min-width: 800px) {
   max-width: calc(100% - 35px);
   
-}`
+}` */

@@ -32,14 +32,22 @@ export const MobileScreenSkills = () => {
         logo: {
             width: '24px',
             height: '100%'
-        }
+        },
+        swiperSlide: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100vw',
+        },
     }
     
     return (
         <Wrapper>
             {windowWidth < 1000 ? 
-            
         <Swiper navigation slidesPerView={1}>
+            <SwiperSlide style={style.swiperSlide}>
+                <div className='section-title flex-center'>Skills & Tools</div>
+            </SwiperSlide>
             <SwiperSlide>
                 <SkillContainer onClick={()=>{window.open('https://www.javascript.com/', '_blank')}}>
                     <div className="flex-icon">JavaScript <SiJavascript style={style.logo}/></div>
@@ -110,6 +118,9 @@ export const MobileScreenSkills = () => {
         </Swiper>
         : 
         <Swiper navigation slidesPerView={1}>
+            <SwiperSlide style={style.swiperSlide}>
+                <div className='section-title flex-center'>Skills & Tools</div>
+            </SwiperSlide>
             <SwiperSlide>
                 <SkillsGrid>
                     <SkillContainer onClick={()=>{window.open('https://www.javascript.com/', '_blank')}}>
@@ -161,10 +172,23 @@ export const MobileScreenSkills = () => {
 }
 
 const Wrapper = styled.div`
-    padding: 0 35px;
-    height: 85%;
+
+    height: 100vh;
     display: flex;
     align-items: center;
+
+    .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+
+        @media screen and (min-width: 800px) {  
+            width: auto;
+}
+
+   
+    }
 
     .swiper-button-prev,
     .swiper-button-next {
@@ -178,6 +202,15 @@ const Wrapper = styled.div`
         visibility: hidden;
         opacity: 0;
         transition: 0.5s ease-in-out;
+    }
+
+    .swiper-container {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        height: 80%;
+        margin: auto 0;
     }
 `
 

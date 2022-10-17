@@ -27,11 +27,14 @@ export const Projects = ({navRef}) => {
     <Wrapper
     className="page projects"
     ref={el=>navRef.current={...navRef.current, projects: el}}>
-    <div className="section-title"><span className="margin-left">Projects</span></div>
-        <Swiper navigation slidesPerView={1} loop={true} 
+    {/* <div className="section-title"><span className="margin-left">Projects</span></div> */}
+        <Swiper navigation slidesPerView={1}
         style={{
             height: '100%'
         }}>
+        <SwiperSlide style={styles.swiperSlide}>
+            <div className="section-title">Projects</div>
+            </SwiperSlide>
             <SwiperSlide style={styles.swiperSlide}>
                 <SlideContent>
                     <div>
@@ -99,37 +102,53 @@ export const Projects = ({navRef}) => {
 
 const Wrapper = styled.div`
     padding: 0 35px;
-    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #fff;
+
+    .projects-title {
+        font-size: 100px;
+        font-weight: 700;
+
+
+    }
 
     .swiper-button-prev,
     .swiper-button-next {
         color: inherit;
-}
+}   
+    .swiper-button-disabled {
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+    }
     .swiper-pagination-bullet-active {
         background-color: black;
     }
 
     .swiper-container {
-        margin: 0 auto;
     }
     .swiper-slide {
         height: 80%;
         margin: auto 0;
-        display: flex;
     }
 `
 
 
 const SlideContent = styled.div`
-    text-align: center;
+
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 80%;
-    margin: auto 0;
-    margin-top: -12px;
+    font-size: 16px;
     line-height: 1.6;
+
+    @media screen and (min-width: 800px) {  
+            font-size: 20px;
+            text-align: center;
+}
 
 
     @media screen and (min-width: 1450px) {
@@ -140,12 +159,17 @@ const SlideContent = styled.div`
     width: 100%;
     
     .slide-title {
-        font-size: 1.5rem;
+        font-weight: 700;
+        font-size: 30px;
         margin-bottom: 12px;
+
+        @media screen and (min-width: 800px) {  
+            font-size: 48px;
+}
     }
 
     .muse-image {
-        height: 280px;
+        height: 250px;
         @media screen and (min-width: 800px) {
             height: 400px;
         }
@@ -171,16 +195,22 @@ const ExternalLink = styled.a`
     font-family: inherit;
     background: inherit;
     color: inherit;
+
     text-decoration: none;
     border: 1px solid black;
-    font-size: 1rem;
-    padding: 6px 15px;
+    padding: 4px 12px;
+
     cursor: pointer;
     display: inline-block;
 
     transition: all 0.1s ease-in-out;
-        &:hover,
-        &:focus {
-            transform: scale(1.05);
+    &:hover,
+    &:focus {
+        transform: scale(1.05);
+    }
+
+    @media screen and (min-width: 800px) {
+        font-size: 20px;
+        padding: 6px 15px;
         }
     `
