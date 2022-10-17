@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import NewfoundlandBG from './imgs/newfoundland-bg.jpg'
-import Portrait from './imgs/portrait.jpg'
 
 export const Introduction = ({navRef}) => {
     const navPage = (type) => {
@@ -28,11 +26,7 @@ export const Introduction = ({navRef}) => {
 
 const Wrapper = styled.div`
     display: flex;
-
-
     align-items: center;
-    /* background-image: linear-gradient( rgba(0, 0, 0, 0.1), 
-    rgba(0, 0, 0, 0.35) ), url(${NewfoundlandBG}); */
     filter: grayscale(100%);
     max-width: 100%;
     background-position: center;
@@ -62,33 +56,6 @@ const Wrapper = styled.div`
         -webkit-transform: translateX(0%);
     }
     };
-    
-    .portrait-image {
-        width: 450px;
-        height: 100%;
-        animation: 3s ease-in 0s 1 fadein;
-    }
-
-    /* .animation-container {
-        position: relative;
-    }
-
-    .animation-container div {
-        position: absolute;
-        transform: translate(6%, -70%);
-    }
-
-    .animation-container div:nth-child(1) {
-        color: transparent;
-        
-    }
-    .animation-container div:nth-child(2) {
-        animation: animate 4s ease-in-out infinite
-    }
-    .translate-Y {
-        z-index: 99;
-        transform: translate(8%, 70%);
-    } */
     .translate-Y {
         z-index: 99;
         transform: translate(4%, 0%);

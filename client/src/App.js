@@ -6,7 +6,6 @@ import { Introduction } from "./Introduction";
 import { Skills } from "./Skills";
 import { Projects } from "./Projects";
 import { Contact } from "./Contact";
-import { Sidebar } from "./Sidebar";
 
 import { useRef } from "react";
 import { useContext } from "react";
@@ -20,11 +19,8 @@ const App = () => {
   const navRef = useRef(null);
 
   // import menuOpen to add blur effect to content when sidebar menu opens
-  const {menuOpen} = useContext(PageContext);
-  const parent = document.getElementById('sticky-container')
-  // while (parent) {
-  //   console.log(getComputedStyle(parent).overflow)
-  // }
+  const { menuOpen } = useContext(PageContext);
+
 
   return (
     <Wrapper id='sticky-container'>
@@ -73,11 +69,5 @@ width: 100vw;
 
 @media screen and (min-width: 400px) {
 
-  
 }
-
 `
-/* @media screen and (min-width: 800px) {
-  max-width: calc(100% - 35px);
-  
-}` */

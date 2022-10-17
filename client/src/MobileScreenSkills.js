@@ -20,7 +20,6 @@ import { CgNpm } from 'react-icons/cg'
 // proved difficult for me to manipulate properly, and so eventually it was easier to just make a new component, as
 // the amount of cards in a grid is changing based on screen size
 
-
 SwiperCore.use([Navigation, Pagination])
 export const MobileScreenSkills = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -213,12 +212,6 @@ const Wrapper = styled.div`
         margin: auto 0;
     }
 `
-
-const Content = styled.div`
-    display: flex;
-    height: 85%;
-    align-items: center;
-    `
 
 const SkillsGrid = styled.div`
     display: grid;

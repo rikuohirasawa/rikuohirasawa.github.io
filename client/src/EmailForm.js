@@ -47,10 +47,6 @@ export const EmailForm = () => {
                         setInputFocus(true)
                     }}/>
                 </div>
-                {/* </div>
-                <Label htmlFor='subject'>Subject</Label>
-                <Input name='subject' id='subject' type='text'/>
-                <div> */}
                 <div className="grid-span-2">
                 <Label htmlFor='message' inputFocus={inputFocus}>Message <span className="align-right">(required)</span></Label>
                 <Message name='message' id='message' required style={{width: '100%'}} onFocus={()=>{

@@ -13,6 +13,7 @@ import LabImage from './imgs/mh-lab.JPG'
 import { Page } from './GlobalStyles'
 
 SwiperCore.use([Navigation, Pagination])
+
 export const Projects = ({navRef}) => {
 
     const styles = {
@@ -27,7 +28,6 @@ export const Projects = ({navRef}) => {
     <Wrapper
     className="page projects"
     ref={el=>navRef.current={...navRef.current, projects: el}}>
-    {/* <div className="section-title"><span className="margin-left">Projects</span></div> */}
         <Swiper navigation slidesPerView={1}
         style={{
             height: '100%'
@@ -137,7 +137,6 @@ const Wrapper = styled.div`
 
 
 const SlideContent = styled.div`
-
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -188,21 +187,17 @@ const SlideContent = styled.div`
 
 const ExternalLinkContainer = styled.div`
     margin: 24px 0;
-
 `
 
 const ExternalLink = styled.a`
     font-family: inherit;
     background: inherit;
     color: inherit;
-
     text-decoration: none;
     border: 1px solid black;
     padding: 4px 12px;
-
     cursor: pointer;
     display: inline-block;
-
     transition: all 0.1s ease-in-out;
     &:hover,
     &:focus {
